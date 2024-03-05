@@ -9,6 +9,7 @@ pipeline {
         stage("build") {
             steps {
                 echo 'Building the application'
+                echo 'Build app by jenkins'
             }
         }
         stage("test") {
