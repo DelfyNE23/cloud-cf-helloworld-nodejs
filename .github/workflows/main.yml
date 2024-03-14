@@ -26,20 +26,23 @@ jobs:
     - name: Build MTA
       run: mbt build -p cf
     - name: Upload Artifact
-      uses: actions/upload-artifact@master	
+      uses: actions/upload-artifact@v4	
       with:	
         name: mta
         path: ./mta_archives/piper.node.hello.world_1.0.0.mtar
         
   deploy:
+     name: Release project
      needs: build
      runs-on: ubuntu-latest
      steps:
        - name: Download Artifact
-         uses: actions/download-artifact@master
+         uses: actions/download-artifact@v4
          with:
            name: mta
-           path: ./mta_archives/piper.node.hello.world_1.0.0.mtar  #./
+           path: ./mta_archives/piper.node.hello.world_1.0.0.mtar  
+       - name: Test artifact downloaded
+         run: ls -R ./mta_archives/piper.node.hello.world_1.0.0.mtar 
        - name: Deploy to Cloud Foundry
          uses: guerric-p/cf-cli-action@master
          with:
