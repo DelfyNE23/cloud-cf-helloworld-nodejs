@@ -48,4 +48,4 @@ jobs:
            cf_password: ${{ secrets.CF_PASSWORD }}
            cf_org: ${{ secrets.CF_ORG }}
            cf_space: ${{ secrets.CF_SPACE }}
-           command: deploy ./piper.node.hello.world_1.0.0.mtar -f
+           command: deploy ./mta_archives/piper.node.hello.world_1.0.0.mtar -f
