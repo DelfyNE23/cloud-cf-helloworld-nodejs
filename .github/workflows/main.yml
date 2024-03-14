@@ -13,11 +13,11 @@ jobs:
     name: build-project
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 12
     - name: Install MTA Build Tool
       run: npm install -g mbt
     # Do not generate package-lock.json
