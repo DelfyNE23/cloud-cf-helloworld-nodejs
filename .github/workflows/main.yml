@@ -43,7 +43,7 @@ jobs:
            name: mta
            path: ./  
        - name: Test artifact downloaded
-         run: ls -R
+         run: ls -R -la
        - name: Deploy to Cloud Foundry
          uses: guerric-p/cf-cli-action@master
          with:
@@ -52,4 +52,4 @@ jobs:
            cf_password: ${{ secrets.CF_PASSWORD }}
            cf_org: ${{ secrets.CF_ORG }}
            cf_space: ${{ secrets.CF_SPACE }}
-           command: deploy ./com.sap.piper.node.hello.world_1.0.0.mtar -f
+           command: deploy ./mta/mta_archives/com.sap.piper.node.hello.world_1.0.0.mtar -f
