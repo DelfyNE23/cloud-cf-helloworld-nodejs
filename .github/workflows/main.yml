@@ -51,4 +51,4 @@ jobs:
            cf_password: ${{ secrets.CF_PASSWORD }}
            cf_org: ${{ secrets.CF_ORG }}
            cf_space: ${{ secrets.CF_SPACE }}
-           command: deploy /home/runner/work/cloud-cf-helloworld-nodejs/cloud-cf-helloworld-nodejs/mta_archives/com.sap.piper.node.hello.world_1.0.0.mtar -f
+           command: deploy ./com.sap.piper.node.hello.world_1.0.0.mtar -f
