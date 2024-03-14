@@ -29,7 +29,7 @@ jobs:
       uses: actions/upload-artifact@v4	
       with:	
         name: mta
-        path: ./mta_archives/piper.node.hello.world_1.0.0.mtar
+        path: ./
         
   deploy:
      name: Release project
@@ -40,9 +40,9 @@ jobs:
          uses: actions/download-artifact@v4
          with:
            name: mta
-           path: ./mta_archives/piper.node.hello.world_1.0.0.mtar  
+           path: ./  
        - name: Test artifact downloaded
-         run: ls -R ./mta_archives/piper.node.hello.world_1.0.0.mtar 
+         run: ls -R ./
        - name: Deploy to Cloud Foundry
          uses: guerric-p/cf-cli-action@master
          with:
